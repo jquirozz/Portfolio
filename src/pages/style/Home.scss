@@ -1,0 +1,51 @@
+@use "/src/index.scss" as *;
+
+$top: 3rem;
+$name: 10rem;
+$bottom: 1rem;
+
+.Home {
+    @include grid-center;
+    background: $main;
+
+    .imJoseph {
+        @include flex-center;
+        height: 100dvh;
+
+        & header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+
+            font-size: $top * 0.9;
+            height: $top;
+            width: 100%;
+
+            & h2 {
+            }
+            & aside {
+                display: flex;
+                gap: 0.25rem;
+
+                & a {
+                    & svg {
+                    }
+                }
+            }
+        }
+        & h1 {
+            font-size: $name;
+            height: $name * 0.95;
+        }
+        & footer {
+            display: flex;
+            justify-content: end;
+
+            font-size: $bottom;
+            width: 100%;
+
+            & p {
+            }
+        }
+    }
+}

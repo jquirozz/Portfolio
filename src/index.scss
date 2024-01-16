@@ -1,0 +1,67 @@
+:root {
+  --main: #700;
+  --text: #fff;
+}
+// SCSS Variables -> Better syntaxis
+$main: var(--main);
+$text: var(--text);
+
+// EXPORTING
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+// RESET
+// Fonts
+@font-face {
+  font-family: gt;
+  src:
+    local("gt"),
+    url(/fonts/gt.woff) format("woff");
+}
+@font-face {
+  font-family: acorn;
+  src:
+    local("acorn"),
+    url(/fonts/acorn.woff) format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  user-select: none;
+  
+  font-family: gt;
+  text-decoration: none;
+
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: acorn;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+a {
+  color: inherit;
+}

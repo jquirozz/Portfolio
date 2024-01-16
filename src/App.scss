@@ -1,0 +1,6 @@
+@use "/src/index.scss" as *;
+
+.App {
+    min-height: 100dvh;
+    background: $main;
+}
