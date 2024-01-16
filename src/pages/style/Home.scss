@@ -3,7 +3,6 @@
 $top: 3rem;
 $name: 10rem;
 $bottom: 1rem;
-
 .Home {
     @include grid-center;
     background: $main;
@@ -51,8 +50,51 @@ $bottom: 1rem;
             @include absolute-center;
             bottom: 2rem;
 
-            font-size: 2rem;
+            font-size: $bottom * 2;
             filter: drop-shadow(0 0 5px #fff);
+        }
+    }
+}
+
+// Tablet
+$top-tab: $top * 0.75;
+$name-tab: $name * 0.75;
+$bottom-tab: $bottom * 0.75;
+@media (max-width: 650px) {
+    .Home {
+        .imJoseph {
+            & header {
+                font-size: $top-tab * 0.9;
+                height: $top-tab;
+            }
+            & h1 {
+                font-size: $name-tab;
+                height: $name-tab * 0.95;
+            }
+            & footer {
+                font-size: $bottom-tab;
+            }
+            .arrowDown {
+                font-size: $bottom-tab * 1.75;
+            }
+        }
+    }
+}
+
+// Mobile
+$top-mob: $top * 0.45;
+$name-mob: $name * 0.45;
+@media (max-width: 450px) {
+    .Home {
+        .imJoseph {
+            & header {
+                font-size: $top-mob * 0.9;
+                height: $top-mob;
+            }
+            & h1 {
+                font-size: $name-mob;
+                height: $name-mob * 0.95;
+            }
         }
     }
 }

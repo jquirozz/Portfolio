@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import './style/NotFound.scss'
-import { HiCodeBracket } from 'react-icons/hi2'
+import { FaCode } from 'react-icons/fa'
 
 function NotFound () {
   const [countDown, setCountDown] = useState(3)
@@ -25,7 +25,7 @@ function NotFound () {
   return (
     <div className='Error'>
       <header>
-        <HiCodeBracket />
+        <FaCode />
       </header>
       <footer>
         <h1>NOT FOUND</h1>

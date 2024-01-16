@@ -13,7 +13,9 @@
         box-shadow: 0 0 5px #0005;
 
         & a {
+            font-size: 1rem;
             padding: 0.5rem 1.25rem;
+
             color: $sec;
             background: $main;
         }
@@ -61,4 +63,24 @@
 }
 .hide {
     display: none;
+}
+
+// Mobile
+@media (max-width: 320px) {
+    .NavBar {
+        .links {
+            a {
+                font-size: 0.9rem;
+                padding: 0.25rem 1rem;
+            }
+            .active {
+                &::before {
+                    left: -0.8rem;
+                }
+                &::after {
+                    right: -0.8rem;
+                }
+            }
+        }
+    }
 }
