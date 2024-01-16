@@ -47,5 +47,12 @@ $bottom: 1rem;
             & p {
             }
         }
+        .arrowDown {
+            @include absolute-center;
+            bottom: 2rem;
+
+            font-size: 2rem;
+            filter: drop-shadow(0 0 5px #fff);
+        }
     }
 }

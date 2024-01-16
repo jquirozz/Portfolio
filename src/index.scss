@@ -1,10 +1,10 @@
 :root {
   --main: #700;
-  --text: #fff;
+  --sec: #fff;
 }
 // SCSS Variables -> Better syntaxis
 $main: var(--main);
-$text: var(--text);
+$sec: var(--sec);
 
 // EXPORTING
 @mixin flex-center {
@@ -16,6 +16,11 @@ $text: var(--text);
 @mixin grid-center {
   display: grid;
   place-items: center;
+}
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 // RESET
@@ -37,13 +42,13 @@ $text: var(--text);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
   user-select: none;
-  
+
   font-family: gt;
   text-decoration: none;
 
-  color: $text;
+  color: $sec;
 }
 
 h1,
