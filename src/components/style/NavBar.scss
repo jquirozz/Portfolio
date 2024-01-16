@@ -41,10 +41,10 @@
                 background: $main;
             }
             &::before {
-                left: -1.2rem;
+                left: -1.25rem;
             }
             &::after {
-                right: -1.2rem;
+                right: -1.25rem;
             }
         }
         & a:nth-child(1) {
@@ -75,10 +75,10 @@
             }
             .active {
                 &::before {
-                    left: -0.8rem;
+                    left: -0.7rem;
                 }
                 &::after {
-                    right: -0.8rem;
+                    right: -0.7rem;
                 }
             }
         }
