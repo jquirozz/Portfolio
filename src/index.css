@@ -1,0 +1,33 @@
+/* STYLES RESET */
+
+@font-face {
+  font-family: gt;
+  src: local("gt"),url(/fonts/gt.woff) format("woff")
+}
+
+@font-face {
+  font-family: acorn;
+  src: local("acorn"),url(/fonts/acorn.woff) format("woff")
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
+  font-family: gt;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: acorn;
+}
+
+button,input,textarea {
+  border: none;
+  outline: none
+}
+
+a {
+  color: inherit;
+}
