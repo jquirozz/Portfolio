@@ -8,7 +8,7 @@ function ContactInput ({ name, type, id, value, setValue, errors }) {
 
   useEffect(() => {
     // eslint-disable-next-line react/prop-types
-    const isError = errors.some((error) => error === name)
+    const isError = errors.some(error => error === name)
     setAlert(isError)
   }, [errors, name])
 
@@ -24,7 +24,7 @@ function ContactInput ({ name, type, id, value, setValue, errors }) {
           type={type}
           name={name}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={e => setValue(e.target.value)}
         />
       )}
       {type === 'area' && (
@@ -32,7 +32,7 @@ function ContactInput ({ name, type, id, value, setValue, errors }) {
           id={id}
           name={name}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={e => setValue(e.target.value)}
         />
       )}
     </section>

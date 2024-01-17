@@ -61,7 +61,12 @@ function ContactForm ({ sent, setSent }) {
 
   const sendMail = async () => {
     try {
-      const isSent = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      const isSent = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        form.current,
+        PUBLIC_KEY
+      )
       if (isSent.text === 'OK') return setSent(true)
     } catch (error) {
       console.error('MAIL ERROR', error)
