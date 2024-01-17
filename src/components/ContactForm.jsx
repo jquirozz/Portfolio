@@ -13,29 +13,24 @@ const TEMPLATE_ID = 'template_c4zp9tq'
 const PUBLIC_KEY = '8f8ZQWGWsnvc8CVp8'
 
 // eslint-disable-next-line react/prop-types
-function ContactForm ({ sent, setSent }) {
+function ContactForm ({ sent, setSent, setError }) {
   const form = useRef()
   const [name, setName] = useState('')
   const [mail, setMail] = useState('')
   const [message, setMessage] = useState('')
   const [inputError, setInputError] = useState([])
 
-  // DELETE THIS LATER
-  useEffect(() => {
-    console.error('ERROR', inputError)
-  }, [inputError])
-
   useEffect(() => {
     if (sent) {
       setName('')
       setMail('')
       setMessage('')
+      setInputError([])
     }
   }, [sent])
 
   const handleSubmit = e => {
     e.preventDefault()
-    setInputError([])
     const isValidated = validateInputs()
     if (isValidated) {
       sendMail({ form, setSent })
@@ -44,6 +39,7 @@ function ContactForm ({ sent, setSent }) {
 
   const validateInputs = () => {
     let isValid = true
+    setInputError([])
     if (name.length < 4) {
       setInputError(prev => [...prev, 'name'])
       isValid = false
@@ -70,7 +66,7 @@ function ContactForm ({ sent, setSent }) {
       if (isSent.text === 'OK') return setSent(true)
     } catch (error) {
       console.error('MAIL ERROR', error)
-      return false
+      setError(true)
     }
   }
 

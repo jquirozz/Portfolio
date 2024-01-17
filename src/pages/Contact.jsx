@@ -1,6 +1,9 @@
 // MODULES
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ContactForm from '../components/ContactForm'
+
+// COMPONENTS
+import MailNotification from '../components/MailNotification'
 
 // STYLE
 import './style/Contact.scss'
@@ -10,7 +13,8 @@ const CONTACT_MAIL = 'jqui.contact@gmail.com'
 
 function Contact () {
   const [copy, setCopy] = useState(false)
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState(true)
+  const [error, setError] = useState(false)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(CONTACT_MAIL)
@@ -18,6 +22,20 @@ function Contact () {
     setTimeout(() => {
       setCopy(false)
     }, 2000)
+  }
+
+  // Reset sent or error after 3 second
+  useEffect(() => {
+    if (sent || error) {
+      setTimeout(() => {
+        setSent(false)
+        setError(false)
+      }, 3000)
+    }
+  }, [sent, error])
+
+  if (sent || error) {
+    return <MailNotification sent={sent} error={error} />
   }
 
   return (
@@ -29,7 +47,7 @@ function Contact () {
           {copy ? <IoCheckmark /> : <IoCopy />}
         </section>
       </header>
-      <ContactForm sent={sent} setSent={setSent} />
+      <ContactForm sent={sent} setSent={setSent} setError={setError} />
     </div>
   )
 }

@@ -2,6 +2,7 @@
 
 .NavBar {
     @include absolute-center;
+    z-index: 999;
     top: 2rem;
 
     .links {

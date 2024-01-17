@@ -2,5 +2,18 @@
 
 .App {
     min-height: 100dvh;
-    background: $main;
+
+    background: linear-gradient(-45deg, #000, #000, $main, $main);
+    background-size: 400% 400%;
+    animation: gradient 30s ease-in-out infinite;
+}
+@keyframes gradient {
+    0%,
+    to {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }

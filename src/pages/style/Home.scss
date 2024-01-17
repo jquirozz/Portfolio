@@ -6,10 +6,10 @@ $bottom: 1.15rem;
 
 .Home {
     @include grid-center;
-    background: $main;
-
+    
     .imJoseph {
         @include flex-center;
+        position: relative;
         height: 100svh;
 
         & header {
@@ -83,8 +83,8 @@ $bottom-tab: $bottom * 0.75;
 }
 
 // Mobile
-$top-mob: $top * 0.6;
-$name-mob: $name * 0.45;
+$top-mob: $top * 0.7;
+$name-mob: $name * 0.6;
 @media (max-width: 450px) {
     .Home {
         .imJoseph {
@@ -95,6 +95,24 @@ $name-mob: $name * 0.45;
             & h1 {
                 font-size: $name-mob;
                 height: $name-mob * 0.95;
+            }
+        }
+    }
+}
+
+// Small mobile
+$top-smal: $top * 0.65;
+$name-smal: $name * 0.45;
+@media (max-width: 380px) {
+    .Home {
+        .imJoseph {
+            & header {
+                font-size: $top-smal * 0.9;
+                height: $top-smal;
+            }
+            & h1 {
+                font-size: $name-smal;
+                height: $name-smal * 0.95;
             }
         }
     }
