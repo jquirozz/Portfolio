@@ -1,4 +1,5 @@
 // MODULES
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // PAGES
@@ -13,7 +14,20 @@ import NavBar from './components/NavBar'
 // STYLES
 import './App.scss'
 
+const COLORS = [
+  '700', // Red
+  '007', // Blue
+  '407' // Purple
+]
+
 function App () {
+  // Get random main color
+  useEffect(() => {
+    const index = Math.floor(Math.random() * COLORS.length)
+    const newColor = COLORS[index]
+    document.documentElement.style.setProperty('--main', `#${newColor}`)
+  }, [])
+
   return (
     <div className='App'>
       <BrowserRouter>
