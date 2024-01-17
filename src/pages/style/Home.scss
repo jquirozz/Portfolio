@@ -58,7 +58,7 @@ $bottom: 1.15rem;
 }
 
 // Tablet
-$top-tab: $top * 0.75;
+$top-tab: $top * 0.9;
 $name-tab: $name * 0.75;
 $bottom-tab: $bottom * 0.75;
 @media (max-width: 650px) {
@@ -83,7 +83,7 @@ $bottom-tab: $bottom * 0.75;
 }
 
 // Mobile
-$top-mob: $top * 0.55;
+$top-mob: $top * 0.6;
 $name-mob: $name * 0.45;
 @media (max-width: 450px) {
     .Home {
