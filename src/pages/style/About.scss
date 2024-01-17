@@ -1,0 +1,249 @@
+@use "/src/index.scss" as *;
+
+.About {
+    @include flex-center;
+    padding-top: 6rem;
+    min-height: calc(100svh - 6rem);
+
+    .wrap {
+        display: grid;
+        place-items: center;
+        padding: 0.5rem;
+
+        width: 100%;
+        max-width: 1000px;
+
+        .top {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.5rem;
+
+            & section {
+                display: grid;
+                gap: 2rem;
+                padding: 2rem;
+                border-radius: 5px;
+
+                color: #111;
+                background: #fff;
+
+                & header {
+                    & h2 {
+                        font-size: 2rem;
+                        height: 2rem;
+                    }
+                    & h1 {
+                        font-size: 5rem;
+                        height: 4.75rem;
+                    }
+                }
+                .divider {
+                    width: 100%;
+                    height: 0.3rem;
+
+                    border-radius: 999px;
+
+                    background: $main;
+                }
+                & footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    gap: 1rem;
+
+                    & p {
+                        font-size: 1.2rem;
+                        max-width: 700px;
+                        color: #111;
+                    }
+                    & h3 {
+                        font-size: 1.6rem;
+                        color: $main;
+                    }
+                    .links {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+
+                        & a {
+                            padding: 1.25rem;
+
+                            & h2 {
+                                font-size: 1.25rem;
+                                height: 1.25rem;
+                            }
+                        }
+                        .contactMe {
+                            border-radius: 5px;
+                            color: $sec;
+                            background: $main;
+                        }
+                    }
+                }
+            }
+            & aside {
+                @include grid-center;
+
+                gap: 1rem;
+                padding: 2rem;
+
+                border-radius: 5px;
+                background: $sec;
+
+                & header {
+                    position: relative;
+                    overflow: hidden;
+
+                    transition: 300ms ease-in-out;
+                    border: 0.25rem solid #fff;
+                    border-radius: 50%;
+
+                    background: #000;
+
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 250px;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 0 10px $main;
+                        border: 0.25rem solid $main;
+                    }
+                }
+                & footer {
+                    display: flex;
+                    gap: 1rem;
+
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+
+    // TABLETS
+    @media (max-width: 980px) {
+        .wrap {
+            .top {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    // MOBILE
+    @media (max-width: 680px) {
+        .wrap {
+            .top {
+                & section {
+                    gap: 1.5rem;
+                    padding: 1.5rem;
+
+                    & header {
+                        & h2 {
+                            font-size: 1.75rem;
+                            height: 1.75rem;
+                        }
+                        & h1 {
+                            font-size: 4rem;
+                            height: 3.75rem;
+                        }
+                    }
+                    & footer {
+                        & p {
+                            font-size: 1rem;
+                        }
+                        & h3 {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                & aside {
+                    padding: 1.5rem;
+                    & header {
+                        & img {
+                            max-width: 200px;
+                        }
+                    }
+                    & footer {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+    // SMALL MOBILES
+    @media (max-width: 580px) {
+        .wrap {
+            .top {
+                & section {
+                    gap: 1.25rem;
+                    padding: 1.25rem;
+
+                    & header {
+                        & h2 {
+                            font-size: 1.25rem;
+                            height: 1.25rem;
+                        }
+                        & h1 {
+                            font-size: 3rem;
+                            height: 2.75rem;
+                        }
+                    }
+                    & footer {
+                        & p {
+                            font-size: 1rem;
+                        }
+                        & h3 {
+                            font-size: 1.25rem;
+                        }
+                        .links {
+                            & a {
+                                padding: 1rem;
+
+                                & h2 {
+                                    font-size: 1rem;
+                                    height: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Title Adjusments
+    @media (max-width: 380px) {
+        .wrap {
+            .top {
+                & section {
+                    & header {
+                        & h2 {
+                            font-size: 1rem;
+                            height: 1.1rem;
+                        }
+                        & h1 {
+                            font-size: 2.25rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 300px) {
+        .wrap {
+            .top {
+                & section {
+                    & header {
+                        & h1 {
+                            font-size: 1.95rem;
+                            height: 1.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
