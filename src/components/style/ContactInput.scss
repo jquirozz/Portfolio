@@ -1,0 +1,22 @@
+.ContactInput {
+    display: grid;
+    gap: 0.25rem;
+
+    & header {
+        & label {
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+        & svg {}
+    }
+
+    & input,
+    textarea {
+        padding: 0.5rem;
+
+        border-radius: 5px;
+        resize: none;
+
+        color: #111;
+    }
+}

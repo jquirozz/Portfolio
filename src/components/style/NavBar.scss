@@ -14,7 +14,7 @@
 
         & a {
             font-size: 1rem;
-            padding: 0.5rem 1.25rem;
+            padding: 0.5rem 1.5rem;
 
             color: $sec;
             background: $main;
@@ -41,20 +41,22 @@
                 background: $main;
             }
             &::before {
-                left: -1.25rem;
+                left: -1rem;
             }
             &::after {
-                right: -1.25rem;
+                right: -1rem;
             }
         }
         & a:nth-child(1) {
-            padding-right: 1.5rem;
+            padding-left: 1.25rem;
+            padding-right: 1.75rem;
             &::before {
                 display: none;
             }
         }
         & a:nth-last-child(1) {
-            padding-left: 1.5rem;
+            padding-right: 1.25rem;
+            padding-left: 1.75rem;
             &::after {
                 display: none;
             }
