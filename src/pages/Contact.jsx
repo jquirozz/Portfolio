@@ -13,7 +13,7 @@ const CONTACT_MAIL = 'jqui.contact@gmail.com'
 
 function Contact () {
   const [copy, setCopy] = useState(false)
-  const [sent, setSent] = useState(true)
+  const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
 
   const handleCopy = () => {

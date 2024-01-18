@@ -37,7 +37,7 @@ function About () {
           </section>
           <aside>
             <header>
-              <img src='/pfp1-min.jpg' alt='My profile picture' />
+              <img src='/images/pfp1-min.jpg' alt='My profile picture' />
             </header>
             <footer>
               <FaSass color='#CD6799' />
