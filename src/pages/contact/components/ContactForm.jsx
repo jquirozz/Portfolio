@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 import ContactInput from './ContactInput'
 
 // STYLE
-import './style/ContactForm.scss'
+import './ContactForm.scss'
 
 const SERVICE_ID = 'service_m1hxrab'
 const TEMPLATE_ID = 'template_c4zp9tq'

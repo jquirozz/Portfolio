@@ -1,0 +1,114 @@
+@use "/src/index.scss" as *;
+
+.Card {
+    display: flex;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    max-width: 600px;
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    background: #fff;
+
+    .info {
+        position: relative;
+
+        overflow: hidden;
+        border-radius: 5px;
+
+        background: #111;
+
+        .background {
+            filter: brightness(0.3);
+
+            & img {
+                display: none;
+                width: 100%;
+                min-width: 270px;
+            }
+            & img:nth-child(1) {
+                display: block;
+            }
+        }
+        & footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 0.5rem;
+            padding: 1.25rem 1.5rem;
+
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+
+            & h1 {
+            }
+            .links {
+                display: flex;
+                gap: 0.5rem;
+
+                & a:hover > svg {
+                    color: $main;
+                }
+            }
+        }
+    }
+    .techs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        gap: 0.5rem;
+        padding: 0.75rem;
+
+        font-size: 2.5rem;
+
+        & svg {
+            color: $main;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .Card {
+        .info {
+            & footer {
+                position: absolute;
+                top: 1rem;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .Card {
+        flex-direction: column;
+        
+        .info {
+            & footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                gap: 0.25rem;
+            }
+        }
+        .techs {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}

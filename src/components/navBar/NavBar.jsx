@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 // STYLES
-import './style/NavBar.scss'
+import './NavBar.scss'
 
 const LINKS = [
   { name: 'Home', url: '/' },

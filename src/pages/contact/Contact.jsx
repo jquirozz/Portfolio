@@ -1,12 +1,12 @@
 // MODULES
 import { useEffect, useState } from 'react'
-import ContactForm from '../components/ContactForm'
+import ContactForm from './components/ContactForm'
 
 // COMPONENTS
-import MailNotification from '../components/MailNotification'
+import MailNotification from './components/MailNotification'
 
 // STYLE
-import './style/Contact.scss'
+import './Contact.scss'
 import { IoCopy, IoCheckmark } from 'react-icons/io5'
 
 const CONTACT_MAIL = 'jqui.contact@gmail.com'

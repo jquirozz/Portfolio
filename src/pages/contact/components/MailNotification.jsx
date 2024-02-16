@@ -1,4 +1,4 @@
-import './style/MailNotification.scss'
+import './MailNotification.scss'
 import {
   MdOutlineSentimentVerySatisfied as Happy,
   MdOutlineSentimentVeryDissatisfied as Sad

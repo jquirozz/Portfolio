@@ -5,11 +5,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // PAGES
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
+import About from './pages/about/About'
+import Contact from './pages/contact/Contact'
+
+import Work from './pages/work/Work'
 
 // COMPONENTS
-import NavBar from './components/NavBar'
+import NavBar from './components/navBar/NavBar'
 
 // STYLES
 import './App.scss'
@@ -37,6 +39,7 @@ function App () {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/work' element={<Work />} />
         </Routes>
       </BrowserRouter>
     </div>

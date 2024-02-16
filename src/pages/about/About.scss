@@ -66,13 +66,18 @@
                         align-items: center;
                         flex-wrap: wrap;
 
-                        & a {
+                        & a,
+                        button {
                             padding: 1.25rem;
 
                             & h2 {
                                 font-size: 1.25rem;
                                 height: 1.25rem;
                             }
+                        }
+                        & button {
+                            cursor: pointer;
+                            background: transparent;
                         }
                         .contactMe {
                             border-radius: 5px;

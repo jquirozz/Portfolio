@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './style/ContactInput.scss'
+import './ContactInput.scss'
 import { GoAlertFill } from 'react-icons/go'
 
 // eslint-disable-next-line react/prop-types

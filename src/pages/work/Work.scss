@@ -1,0 +1,11 @@
+@use "/src/index.scss" as *;
+
+.Work {
+    @include flex-center;
+    gap: 3rem;
+    padding: 3rem 0;
+
+    & header {
+        display: none;
+    }
+}

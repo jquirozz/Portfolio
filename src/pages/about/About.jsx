@@ -1,11 +1,17 @@
 // MODULES
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // STYLES
-import './style/About.scss'
+import './About.scss'
 import { FaReact, FaJs, FaSass } from 'react-icons/fa6'
 
 function About () {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/', { state: { scrollToWork: true } })
+  }
+
   return (
     <div className='About'>
       <div className='wrap'>
@@ -29,9 +35,9 @@ function About () {
                 <Link to='/contact' className='contactMe'>
                   <h2>CONTACT ME</h2>
                 </Link>
-                <Link to='/work'>
+                <button onClick={handleClick}>
                   <h2>View Projects</h2>
-                </Link>
+                </button>
               </div>
             </footer>
           </section>
