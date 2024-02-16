@@ -2,8 +2,9 @@
 
 .Work {
     @include flex-center;
-    gap: 3rem;
-    padding: 3rem 0;
+    gap: 2rem;
+    padding: 2rem 0.5rem;
+    padding-bottom: 0.5rem;
 
     & header {
         display: none;
