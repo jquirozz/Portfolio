@@ -6,7 +6,7 @@ $bottom: 1.15rem;
 
 .Home {
     @include grid-center;
-    
+
     .imJoseph {
         @include flex-center;
         position: relative;
@@ -66,7 +66,6 @@ $bottom-tab: $bottom * 0.75;
 @media (max-width: 650px) {
     .Home {
         .imJoseph {
-            max-height: 80svh;
             & header {
                 font-size: $top-tab * 0.9;
                 height: $top-tab;
@@ -91,8 +90,6 @@ $name-mob: $name * 0.6;
 @media (max-width: 450px) {
     .Home {
         .imJoseph {
-            max-height: 70svh;
-
             & header {
                 font-size: $top-mob * 0.9;
                 height: $top-mob;
