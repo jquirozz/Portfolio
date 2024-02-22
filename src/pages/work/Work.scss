@@ -9,4 +9,18 @@
     & header {
         display: none;
     }
+
+    .main,
+    .side {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0.25rem;
+
+        width: 100%;
+        max-width: 600px;
+        min-width: 275px;
+    }
 }

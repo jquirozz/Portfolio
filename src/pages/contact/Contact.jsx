@@ -24,7 +24,6 @@ function Contact () {
     }, 2000)
   }
 
-  // Reset sent or error after 3 second
   useEffect(() => {
     if (sent || error) {
       setTimeout(() => {

@@ -12,7 +12,6 @@ const SERVICE_ID = 'service_m1hxrab'
 const TEMPLATE_ID = 'template_c4zp9tq'
 const PUBLIC_KEY = '8f8ZQWGWsnvc8CVp8'
 
-// eslint-disable-next-line react/prop-types
 function ContactForm ({ sent, setSent, setError }) {
   const form = useRef()
   const [name, setName] = useState('')

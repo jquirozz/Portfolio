@@ -16,8 +16,6 @@
         display: grid;
         gap: 1rem;
         padding: 1rem;
-        
-        width: 280px;
 
         border-radius: 0.5rem;
         box-shadow: 0 0 20px #000;
@@ -31,9 +29,6 @@
             width: 100%;
             aspect-ratio: 1;
 
-            border: 2px solid $main;
-            border-radius: 50%;
-
             & svg {
                 font-size: 15rem;
             }
@@ -42,6 +37,7 @@
             @include grid-center;
 
             & h2 {
+                font-size: 1.25rem;
             }
         }
     }

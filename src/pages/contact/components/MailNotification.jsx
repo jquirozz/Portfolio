@@ -4,7 +4,6 @@ import {
   MdOutlineSentimentVeryDissatisfied as Sad
 } from 'react-icons/md'
 
-// eslint-disable-next-line react/prop-types
 function MailNotification ({ sent, error }) {
   const checkProps = (op1, op2) => {
     if (sent) return op1

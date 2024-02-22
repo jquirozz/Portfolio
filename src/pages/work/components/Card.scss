@@ -5,7 +5,6 @@
     flex-direction: row-reverse;
 
     width: 100%;
-    max-width: 600px;
 
     overflow: hidden;
     border-radius: 5px;
@@ -50,6 +49,7 @@
             line-height: 2.5rem;
 
             & h1 {
+                text-transform: uppercase;
             }
             .links {
                 display: flex;
@@ -96,7 +96,7 @@
 @media (max-width: 350px) {
     .Card {
         flex-direction: column;
-        
+
         .info {
             & footer {
                 display: flex;

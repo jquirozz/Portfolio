@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import './ContactInput.scss'
 import { GoAlertFill } from 'react-icons/go'
 
-// eslint-disable-next-line react/prop-types
 function ContactInput ({ name, type, id, value, setValue, errors }) {
   const [alert, setAlert] = useState(false)
 
   useEffect(() => {
-    // eslint-disable-next-line react/prop-types
     const isError = errors.some(error => error === name)
     setAlert(isError)
   }, [errors, name])
