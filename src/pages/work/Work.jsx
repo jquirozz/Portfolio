@@ -13,6 +13,13 @@ const WORKS = [
     imgPath: '/work/apexify',
     stack: MAIN_STACK
   }
+  // {
+  //   name: 'Blinked',
+  //   url: 'https://blinked-app.netlify.app/',
+  //   ghUrl: 'https://github.com/jquirozz/Blinked',
+  //   imgPath: '/work/apexify',
+  //   stack: MAIN_STACK
+  // }
 ]
 
 function Work () {

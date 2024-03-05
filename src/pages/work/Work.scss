@@ -10,14 +10,14 @@
         display: none;
     }
 
-    .main,
-    .side {
+    .main {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
 
-        gap: 0.25rem;
+        gap: 1rem;
+        padding: 0.5rem 0;
 
         width: 100%;
         max-width: 600px;

@@ -24,7 +24,7 @@ function About () {
             <div className='divider' />
             <footer>
               <p>
-                A passionate front-end developer dedicated to transforming ideas
+                A passionate front-end developer dedicated to transform ideas
                 into captivating digital realities. I bring two years of
                 hands-on experience to the table. Explore my projects showcasing
                 UI/UX design, component-based architecture, and problem-solving
