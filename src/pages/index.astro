@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Landing from "../components/Landing.astro";
+import Phrase from "../components/Phrase.astro";
+import Card from "../components/Card.astro";
+import ContactForm from "../components/ContactForm.astro";
+
+const WORKS = [
+  {
+    title: "blinked",
+    description: "This is an example",
+    link: "https://blinked-app.netlify.app/",
+    langs: ["react", "sass", "js"],
+    finished: false,
+  },
+  {
+    title: "apexify",
+    description: "This is an example",
+    link: "https://apexif1y.netlify.app/",
+    langs: ["react", "sass", "js"],
+    finished: true,
+  },
+];
+---
+
+<Layout>
+  <main>
+    <Landing />
+    <Phrase text="Perfection one pixel at a time." important={2} />
+    <div class="cards">
+      {WORKS.map((work, key) => <Card side={key} info={work} />)}
+    </div>
+    <Phrase text="If it work don't change it." important={2} />
+    <ContactForm />
+  </main>
+</Layout>
+
+<style>
+  main {
+  }
+
+  /* Landing */
+  /* Phrase 1 */
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(to top, #000d, var(--colorBg));
+  }
+
+  /* ContactForm */
+</style>

@@ -1,0 +1,78 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color: #50a;
+    --colorBg: #50ac;
+    background-color: #000;
+  }
+  /* Fonts */
+  @font-face {
+    font-family: gt;
+    src:
+      local("gt"),
+      url(/fonts/gt.woff) format("woff");
+  }
+  @font-face {
+    font-family: acorn;
+    src:
+      local("acorn"),
+      url(/fonts/acorn.woff) format("woff");
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    user-select: none;
+
+    font-family: gt;
+    text-decoration: none;
+  }
+
+  body {
+    color: #f5f5f5;
+    background: url(https://grainy-gradients.vercel.app/noise.svg);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: acorn;
+    text-wrap: balance;
+  }
+
+  button,
+  input,
+  textarea {
+    border: none;
+    outline: none;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+</style>

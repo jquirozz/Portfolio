@@ -1,0 +1,46 @@
+---
+const { text, important } = Astro.props;
+
+const words = text.split(" ");
+---
+
+<section>
+  <h4>
+    {
+      words.map((word, key) => (
+        <span class={key === important && "important"}>{word}</span>
+      ))
+    }
+  </h4>
+</section>
+
+<style>
+  section {
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    background-color: #f5f5f5;
+  }
+  h4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 2rem 0;
+    padding-bottom: 1.75rem;
+
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  h4 span {
+    transition: color 100ms ease-in-out;
+    color: #111;
+  }
+  h4 span:hover {
+    color: var(--color);
+  }
+  h4 .important {
+    color: var(--color);
+  }
+</style>
