@@ -25,12 +25,14 @@ const words = text.split(" ");
   }
   h4 {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 0.25rem;
-    padding: 2rem 0;
 
-    font-size: 1.75rem;
-    text-align: center;
+    gap: 0.25rem;
+    padding: 2rem;
+
+    font-size: 1.5rem;
   }
   h4 span {
     transition: color 100ms ease-in-out;
@@ -41,5 +43,16 @@ const words = text.split(" ");
   }
   h4 .important {
     color: var(--color);
+  }
+
+  @media (max-width: 500px) {
+    h4 {
+      font-size: 1.25rem;
+    }
+  }
+  @media (max-width: 350px) {
+    h4 {
+      max-width: 225px;
+    }
   }
 </style>
