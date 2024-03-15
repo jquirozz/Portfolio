@@ -1,0 +1,37 @@
+---
+import WorkCard from "./WorkCard.astro";
+
+const WORKS = [
+  {
+    title: "blinked",
+    description: "This is an example",
+    link: "https://blinked-app.netlify.app/",
+    langs: ["react", "sass", "js"],
+    finished: false,
+  },
+  {
+    title: "apexify",
+    description: "This is an example",
+    link: "https://apexif1y.netlify.app/",
+    langs: ["react", "sass", "js"],
+    finished: true,
+  },
+];
+---
+
+<section>
+  {WORKS.map((work, key) => <WorkCard side={key} info={work} />)}
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 0;
+
+    overflow: hidden;
+
+    background: linear-gradient(to top, #000d 50%, var(--colorBg));
+  }
+</style>

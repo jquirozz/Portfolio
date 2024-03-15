@@ -2,11 +2,11 @@
 const { side, info } = Astro.props;
 const { title, description, link, langs, finished } = info;
 
-import Link from "../components/utils/Link.astro";
+import Link from "./utils/Link.astro";
 import Icon from "./utils/Icon.astro";
 ---
 
-<section class={`Card ${side % 2 !== 0 ? "left" : "right"}`}>
+<section class={`WorkCard ${side % 2 !== 0 ? "left" : "right"}`}>
   <Link to={link}>
     <article>
       <header>
@@ -24,7 +24,7 @@ import Icon from "./utils/Icon.astro";
 </section>
 
 <style>
-  .Card {
+  .WorkCard {
     display: flex;
     width: 100%;
   }
@@ -39,8 +39,6 @@ import Icon from "./utils/Icon.astro";
     min-width: 260px;
     max-width: 550px;
     width: 100%;
-
-    box-shadow: 0 0 20px #0005;
 
     background-color: #f5f5f5;
   }
@@ -77,7 +75,7 @@ import Icon from "./utils/Icon.astro";
     --width: 10rem;
     --height: 2.75rem;
 
-    --bottomColor: #111;
+    --bottomColor: #222;
     --bottomOutside: 6;
     --bottomWidth: calc(var(--width) / var(--bottomOutside));
     --bottomHeight: calc(var(--height) * 0.5);
