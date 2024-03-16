@@ -33,7 +33,7 @@ import Link from "../components/utils/Link.astro";
     place-items: center;
 
     width: 100%;
-    aspect-ratio: 0.8;
+    aspect-ratio: 1;
 
     max-height: 100svh;
 
@@ -60,12 +60,12 @@ import Link from "../components/utils/Link.astro";
     height: calc(var(--headerSize) / 1.5);
 
     transition: filter 100ms ease-in-out;
-    filter: opacity(0.9);
+    filter: opacity(1);
 
     fill: #f5f5f5;
   }
   .name header aside svg:hover {
-    filter: opacity(1);
+    filter: opacity(0.75);
   }
   .name h1 {
     --nameSize: 11rem;
@@ -80,7 +80,7 @@ import Link from "../components/utils/Link.astro";
   }
   @media (max-width: 600px) {
     .name header {
-      --headerSize: 5rem;
+      --headerSize: 4rem;
     }
     .name h1 {
       --nameSize: 6rem;
@@ -88,7 +88,7 @@ import Link from "../components/utils/Link.astro";
   }
   @media (max-width: 400px) {
     .name header {
-      --headerSize: 4rem;
+      --headerSize: 3.25rem;
     }
     .name h1 {
       --nameSize: 4.5rem;
