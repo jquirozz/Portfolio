@@ -1,19 +1,192 @@
-<section class="ContactForm">
-  <div class=""></div>
+<section>
+  <aside>
+    <img src="/icons/contact.svg" alt="Contact icon" />
+  </aside>
   <form>
-    <label for="name">My name is</label>
-    <input id="name" type="text" placeholder="Pepito Quiroz" />
-    <label for="email">Contact me on</label>
-    <input id="email" type="email" placeholder="pepito@quiroz.com" />
+    <div class="wrap">
+      <header>
+        <div class="name">
+          <label for="name">My name is</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="John Taylor"
+            aria-label="Your name"
+            required
+          />
+        </div>
+        <div class="company">
+          <label for="company">I work with</label>
+          <input
+            id="company"
+            type="text"
+            placeholder="Company"
+            aria-label="Your company"
+          />
+        </div>
+        <div class="email">
+          <label for="email">Contact me on</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="john@company.com"
+            aria-label="Your email address"
+            required
+          />
+        </div>
+      </header>
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          placeholder="I'd like to..."
+          aria-label="Your message"
+          required></textarea>
+      </div>
+      <button> <h3>SEND</h3> </button>
+    </div>
   </form>
 </section>
 
 <style>
-  .ContactForm {
-    height: 100svh;
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 3rem 0.75rem;
+    padding-bottom: 1rem;
 
-    padding: 5rem 0;
+    min-height: 100vh;
 
-    background-color: #000d;
+    background-color: #111;
+  }
+  aside,
+  form {
+    display: grid;
+    place-items: center;
+  }
+  aside img {
+    width: 75%;
+    min-width: 250px;
+    max-width: 400px;
+    object-fit: contain;
+
+    filter: drop-shadow(0 10px 20px #000);
+  }
+
+  form {
+    margin: auto;
+    max-width: 600px;
+  }
+  .wrap {
+    display: grid;
+    gap: 1rem;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .name,
+  .company,
+  .email,
+  .message {
+    flex: 1;
+    display: grid;
+    gap: 0.25rem;
+    min-width: 250px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  label {
+    position: relative;
+  }
+
+  .name label::before,
+  .email label::before,
+  .message label::before {
+    content: "*";
+    position: relative;
+    left: -0.25rem;
+    color: #a00;
+  }
+
+  #message {
+    width: 100%;
+    aspect-ratio: 1;
+    max-height: 8rem;
+    resize: none;
+  }
+  #name,
+  #company,
+  #email,
+  #message {
+    padding: 0.5rem;
+    font-size: 1rem;
+
+    outline: none;
+    border: none;
+    border-radius: 2.5px;
+    border-bottom-left-radius: 5px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transition:
+      border-color 100ms ease-in-out,
+      box-shadow 100ms ease-in-out;
+    border-color: #222;
+    box-shadow: -2.5px 2.5px 2.5px #222;
+
+    color: #f5f5f5;
+    background-color: #0004;
+  }
+
+  #name:hover,
+  #company:hover,
+  #email:hover,
+  #message:hover {
+    border-color: #333;
+    box-shadow: -2.5px 2.5px 2.5px #333;
+  }
+
+  #name:focus,
+  #company:focus,
+  #email:focus,
+  #message:focus {
+    border-color: var(--color);
+    box-shadow: -2.5px 2.5px 2.5px var(--color);
+  }
+
+  button {
+    padding: 1rem 1rem;
+    padding-bottom: 0.75rem;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    transition:
+      color 100ms ease-in-out,
+      background-color 100ms ease-in-out;
+    color: #f5f5f5;
+    background-color: var(--color);
+  }
+  button:hover {
+    color: var(--color);
+    background-color: #f5f5f5;
+  }
+
+  @media (max-width: 1000px) {
+    section {
+      grid-template-columns: auto;
+      gap: 3rem;
+    }
+    aside img {
+      max-width: 270px;
+    }
   }
 </style>
