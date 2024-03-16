@@ -25,6 +25,7 @@ import Icon from "./utils/Icon.astro";
 
 <style>
   .WorkCard {
+    position: relative;
     display: flex;
     width: 100%;
   }
@@ -113,6 +114,7 @@ import Icon from "./utils/Icon.astro";
 
   .left {
     padding-right: 2rem;
+    transform: translateX(-100px);
   }
   .left .space {
     order: 1;
@@ -124,6 +126,7 @@ import Icon from "./utils/Icon.astro";
   .right {
     justify-content: flex-end;
     padding-left: 2rem;
+    transform: translateX(100px);
   }
   .right article {
     border-top-left-radius: 10px;
@@ -143,3 +146,27 @@ import Icon from "./utils/Icon.astro";
     border-right: var(--bottomWidth) solid var(--bottomColor);
   }
 </style>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+></script>
+<script is:inline>
+  var cards = gsap.utils.toArray(".WorkCard");
+
+  cards.forEach((card) => {
+    gsap.to(card, {
+      x: 0,
+      scrollTrigger: {
+        trigger: card,
+        start: "top bottom",
+        end: "center center",
+        scrub: true,
+        markers: false,
+      },
+    });
+  });
+</script>
