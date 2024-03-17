@@ -1,4 +1,4 @@
-<section>
+<section class="WorkCard">
   <aside>
     <img src="/icons/contact.svg" alt="Contact icon" />
   </aside>
@@ -49,13 +49,14 @@
 </section>
 
 <style>
-  section {
+  .WorkCard {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     padding: 3rem 0.75rem;
     padding-bottom: 1rem;
 
+    overflow: hidden;
     min-height: 100vh;
 
     background-color: #111;
@@ -64,6 +65,10 @@
   form {
     display: grid;
     place-items: center;
+  }
+  aside {
+    /* GSAP animation */
+    transform: translateX(-75px);
   }
   aside img {
     width: 75%;
@@ -77,6 +82,9 @@
   form {
     margin: auto;
     max-width: 600px;
+
+    /* GSAP animation */
+    transform: translateX(75px);
   }
   .wrap {
     display: grid;
@@ -181,7 +189,7 @@
   }
 
   @media (max-width: 1000px) {
-    section {
+    .WorkCard {
       grid-template-columns: auto;
       gap: 3rem;
     }
@@ -190,3 +198,31 @@
     }
   }
 </style>
+
+<script is:inline>
+  let icon = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".WorkCard > aside",
+      start: "top bottom",
+      end: "center center",
+      scrub: true,
+      markers: false,
+    },
+  });
+  icon.to(".WorkCard > aside", {
+    x: 0,
+  });
+
+  let form = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".WorkCard > form",
+      start: "top bottom",
+      end: "center center",
+      scrub: true,
+      markers: false,
+    },
+  });
+  form.to(".WorkCard > form", {
+    x: 0,
+  });
+</script>

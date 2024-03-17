@@ -33,7 +33,7 @@ import Link from "../components/utils/Link.astro";
     place-items: center;
 
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 0.75;
 
     max-height: 100svh;
 
@@ -63,6 +63,7 @@ import Link from "../components/utils/Link.astro";
     gap: 0.75rem;
 
     /* GSAP animation */
+    opacity: 0;
     transform: translateX(75px);
   }
   .name header aside svg {
@@ -108,30 +109,29 @@ import Link from "../components/utils/Link.astro";
   }
 </style>
 
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<!-- GSAP -->
 <script is:inline>
   window.addEventListener("load", () => {
     gsap.to(".name", {
       opacity: 1,
       scale: 1,
-      duration: 0.25,
+      duration: 0.2,
     });
 
     gsap.to(".name > header > h4", {
       y: 0,
-      duration: 0.5,
+      duration: 0.2,
     });
 
     gsap.to(".name > header > aside", {
       x: 0,
+      opacity: 1,
       duration: 0.5,
     });
 
     gsap.to(".name > h1", {
       y: 0,
-      duration: 0.5,
+      duration: 0.2,
     });
   });
 </script>
