@@ -27,7 +27,8 @@ import Form from "./Form.jsx";
     display: grid;
     place-items: center;
     /* GSAP animation */
-    transform: translateX(-75px);
+    opacity: 0;
+    transform: scale(0.25);
   }
   aside img {
     width: 75%;
@@ -54,14 +55,15 @@ import Form from "./Form.jsx";
   let icon = gsap.timeline({
     scrollTrigger: {
       trigger: ".ContactForm > aside",
-      start: "top +=75%",
+      start: "top +=80%",
       scrub: false,
-      markers: false,
+      markers: true,
     },
   });
   icon.to(".ContactForm > aside", {
-    x: 0,
-    duration: 0.3,
+    scale: 1,
+    opacity: 1,
+    duration: 0.25,
     ease: "expoScale(0.5,7,none)",
   });
 </script>
