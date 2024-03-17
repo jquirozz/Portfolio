@@ -153,12 +153,13 @@ import Icon from "./utils/Icon.astro";
   cards.forEach((card) => {
     gsap.to(card, {
       x: 0,
-      duration: 0.25,
+      duration: 0.5,
       scrollTrigger: {
         trigger: card,
         start: "top center",
         scrub: false,
         markers: false,
+        toggleActions: "play reverse play reverse",
       },
     });
   });

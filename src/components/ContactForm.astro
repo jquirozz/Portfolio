@@ -82,9 +82,6 @@
   form {
     margin: auto;
     max-width: 600px;
-
-    /* GSAP animation */
-    transform: translateX(75px);
   }
   .wrap {
     display: grid;
@@ -205,23 +202,11 @@
       trigger: ".WorkCard > aside",
       start: "top center",
       scrub: false,
-      markers: false,
+      markers: true,
+      toggleActions: "play reverse play reverse",
     },
   });
   icon.to(".WorkCard > aside", {
-    x: 0,
-    duration: 0.5,
-  });
-
-  let form = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".WorkCard > form",
-      start: "top center",
-      scrub: false,
-      markers: false,
-    },
-  });
-  form.to(".WorkCard > form", {
     x: 0,
     duration: 0.5,
   });
