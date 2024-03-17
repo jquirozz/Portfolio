@@ -154,12 +154,13 @@ import Icon from "./utils/Icon.astro";
     gsap.to(card, {
       x: 0,
       duration: 0.5,
+      ease: "expoScale(0.5,7,none)",
+
       scrollTrigger: {
         trigger: card,
         start: "top center",
         scrub: false,
         markers: false,
-        toggleActions: "play reverse play reverse",
       },
     });
   });
