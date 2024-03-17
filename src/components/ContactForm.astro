@@ -203,26 +203,26 @@
   let icon = gsap.timeline({
     scrollTrigger: {
       trigger: ".WorkCard > aside",
-      start: "top bottom",
-      end: "center center",
-      scrub: true,
+      start: "top center",
+      scrub: false,
       markers: false,
     },
   });
   icon.to(".WorkCard > aside", {
     x: 0,
+    duration: 0.5,
   });
 
   let form = gsap.timeline({
     scrollTrigger: {
       trigger: ".WorkCard > form",
-      start: "top bottom",
-      end: "center center",
-      scrub: true,
+      start: "top center",
+      scrub: false,
       markers: false,
     },
   });
   form.to(".WorkCard > form", {
     x: 0,
+    duration: 0.5,
   });
 </script>

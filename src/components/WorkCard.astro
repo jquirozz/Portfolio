@@ -153,11 +153,11 @@ import Icon from "./utils/Icon.astro";
   cards.forEach((card) => {
     gsap.to(card, {
       x: 0,
+      duration: 0.25,
       scrollTrigger: {
         trigger: card,
-        start: "top bottom",
-        end: "center center",
-        scrub: true,
+        start: "top center",
+        scrub: false,
         markers: false,
       },
     });
