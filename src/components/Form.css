@@ -1,0 +1,112 @@
+form {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    max-width: 600px;
+}
+
+.wrap {
+    display: grid;
+    gap: 1rem;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.name,
+.company,
+.email,
+.message {
+    flex: 1;
+    display: grid;
+    gap: 0.25rem;
+    min-width: 250px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+label {
+    position: relative;
+}
+
+.name label::before,
+.email label::before,
+.message label::before {
+    content: "*";
+    position: relative;
+    left: -0.25rem;
+    color: #a00;
+}
+
+#message {
+    width: 100%;
+    aspect-ratio: 1;
+    max-height: 8rem;
+    resize: none;
+}
+
+#name,
+#company,
+#email,
+#message {
+    padding: 0.75rem;
+    font-size: 1rem;
+
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transition:
+        border-color 100ms ease-in-out,
+        box-shadow 100ms ease-in-out;
+    border-color: #111;
+    box-shadow: -2.5px 2.5px 15px #111;
+
+    color: #f5f5f5;
+    background-color: #000;
+}
+
+#name:hover,
+#company:hover,
+#email:hover,
+#message:hover {
+    border-color: #222;
+    box-shadow: -2.5px 2.5px 15px #222;
+}
+
+#name:focus,
+#company:focus,
+#email:focus,
+#message:focus {
+    border-color: var(--color);
+    box-shadow: -2.5px 2.5px 15px var(--color);
+}
+
+button {
+    padding: 1rem 1rem;
+    padding-bottom: 0.75rem;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    transition:
+        color 100ms ease-in-out,
+        background-color 100ms ease-in-out;
+    color: #f5f5f5;
+    background-color: var(--color);
+}
+
+button:hover {
+    color: var(--color);
+    background-color: #f5f5f5;
+}

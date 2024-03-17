@@ -48,11 +48,11 @@ import Icon from "./utils/Icon.astro";
   }
   article header h2 {
     text-transform: capitalize;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #000;
   }
   article header p {
-    color: #333;
+    color: #555;
   }
 
   article .image {
@@ -114,7 +114,7 @@ import Icon from "./utils/Icon.astro";
 
   .left {
     padding-right: 2rem;
-    transform: translateX(-100px);
+    transform: translateX(-150px);
   }
   .left .space {
     order: 1;
@@ -126,7 +126,7 @@ import Icon from "./utils/Icon.astro";
   .right {
     justify-content: flex-end;
     padding-left: 2rem;
-    transform: translateX(100px);
+    transform: translateX(150px);
   }
   .right article {
     border-top-left-radius: 10px;
@@ -153,14 +153,14 @@ import Icon from "./utils/Icon.astro";
   cards.forEach((card) => {
     gsap.to(card, {
       x: 0,
-      duration: 0.5,
+      duration: 0.3,
       ease: "expoScale(0.5,7,none)",
 
       scrollTrigger: {
         trigger: card,
         start: "top +=75%",
         scrub: false,
-        markers: true,
+        markers: false,
       },
     });
   });
