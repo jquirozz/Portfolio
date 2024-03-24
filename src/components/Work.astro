@@ -21,7 +21,7 @@ const WORKS = [
 ];
 ---
 
-<section>
+<section id="projects">
   {WORKS.map((work, key) => <WorkCard side={key} info={work} />)}
 </section>
 
@@ -30,7 +30,8 @@ const WORKS = [
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    padding: 5rem 0;
+    padding-top: 7.5rem;
+    padding-bottom: 5rem;
 
     overflow: hidden;
 

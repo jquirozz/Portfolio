@@ -6,8 +6,7 @@ const { title } = Astro.props;
 <script
   is:inline
   is:global
-  src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-></script>
+  src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script
   is:inline
   is:global
@@ -28,9 +27,6 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  :root {
-    --color: #50a;
-  }
   /* Fonts */
   @font-face {
     font-family: gt;
@@ -45,6 +41,10 @@ const { title } = Astro.props;
       url(/fonts/acorn.woff) format("woff");
   }
 
+  :root {
+    --color: #7b29ac;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -54,6 +54,10 @@ const { title } = Astro.props;
 
     font-family: gt;
     text-decoration: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {

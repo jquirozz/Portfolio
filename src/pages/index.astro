@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 
 import Landing from "../components/Landing.astro";
-import Phrase from "../components/Phrase.astro";
 import Work from "../components/Work.astro";
 import ContactForm from "../components/ContactForm.astro";
 ---
@@ -10,9 +9,7 @@ import ContactForm from "../components/ContactForm.astro";
 <Layout>
   <main>
     <Landing />
-    <Phrase text="Perfection one pixel at a time." important={2} />
-    <Work />
-    <Phrase text="Get in touch using the form below" important={2} />
+    <Work/>
     <ContactForm />
   </main>
 </Layout>
