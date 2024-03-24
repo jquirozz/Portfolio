@@ -54,7 +54,7 @@ export default function Form () {
               id='name'
               name='name'
               type='text'
-              placeholder='Emma Thompson'
+              placeholder='John Doe'
               aria-label='Your name'
               value={name}
               onChange={e => setName(e.target.value)}
@@ -79,7 +79,7 @@ export default function Form () {
               id='email'
               name='email'
               type='email'
-              placeholder='emma@company.com'
+              placeholder='johndoe@company.com'
               aria-label='Your email address'
               value={email}
               onChange={e => setEmail(e.target.value)}

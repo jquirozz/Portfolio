@@ -14,7 +14,7 @@ import Icon from "./utils/Icon.astro";
         <p>{description}</p>
       </header>
       <div class="image">
-        <img src={`/work/${title}/1.png`} alt={`${title} image`} />
+        <img src={`/work/${title}/1.png`} alt={`${title} image`} loading="lazy" />
       </div>
       <div class="langs">
         {langs.map((lang) => <Icon name={lang} size="1.75" />)}
@@ -53,6 +53,7 @@ import Icon from "./utils/Icon.astro";
     color: #000;
   }
   article header p {
+    max-width: 500px;
     color: #555;
   }
 
