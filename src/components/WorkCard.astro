@@ -38,13 +38,15 @@ import Icon from "./utils/Icon.astro";
     padding: 1rem;
 
     min-width: 260px;
-    max-width: 550px;
+    max-width: 650px;
     width: 100%;
 
     background-color: #f5f5f5;
   }
 
   article header {
+    display: grid;
+    gap: 0;
   }
   article header h2 {
     text-transform: capitalize;
@@ -120,6 +122,7 @@ import Icon from "./utils/Icon.astro";
     order: 1;
   }
   .left article {
+    padding-left: 4rem;
     border-top-right-radius: 10px;
   }
 
@@ -129,6 +132,7 @@ import Icon from "./utils/Icon.astro";
     transform: translateX(100%);
   }
   .right article {
+    padding-right: 4rem;
     border-top-left-radius: 10px;
   }
   .right article .langs {
@@ -144,6 +148,15 @@ import Icon from "./utils/Icon.astro";
     left: 0;
     border-left: none;
     border-right: var(--bottomWidth) solid var(--bottomColor);
+  }
+
+  @media (max-width: 800px) {
+    .left article {
+      padding-left: 1rem;
+    }
+    .right article {
+      padding-right: 1rem;
+    }
   }
 </style>
 

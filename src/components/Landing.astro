@@ -3,7 +3,6 @@ import Link from "../components/utils/Link.astro";
 ---
 
 <div class="Landing">
-  <div class="background"></div>
   <section class="name">
     <header>
       <h4>I'm</h4>
@@ -37,26 +36,11 @@ import Link from "../components/utils/Link.astro";
     place-items: center;
 
     width: 100%;
-    aspect-ratio: 0.5;
+    aspect-ratio: 1;
 
     max-height: 100svh;
 
     background-color: var(--color);
-  }
-
-  .background {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    scale: 1;
-
-    width: 100svh;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    background-color: #0000;
   }
 
   .name {
@@ -134,34 +118,23 @@ import Link from "../components/utils/Link.astro";
     gsap.to(".name", {
       opacity: 1,
       scale: 1,
-      duration: 0.2,
+      duration: 0.25,
     });
 
     gsap.to(".name > header > h4", {
       y: 0,
-      duration: 0.2,
+      duration: 0.25,
     });
 
     gsap.to(".name > header > aside", {
       x: 0,
       opacity: 1,
-      duration: 0.5,
+      duration: 0.45,
     });
 
     gsap.to(".name > h1", {
       y: 0,
-      duration: 0.2,
+      duration: 0.25,
     });
-  });
-
-  gsap.to(".background", {
-    scale: 3,
-    backgroundColor: "#0005",
-    scrollTrigger: {
-      trigger: ".background",
-      start: "bottom +=50%",
-      scrub: true,
-      markers: false,
-    },
   });
 </script>
