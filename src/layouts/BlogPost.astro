@@ -24,7 +24,7 @@ import "../styles/reset.css";
       <slot />
     </main>
     <footer>
-      <p>Written on: {formatDate(date)}</p>
+      <p>Published on: {formatDate(date)}</p>
     </footer>
   </div>
 </Layout>
@@ -38,7 +38,7 @@ import "../styles/reset.css";
 
     max-width: 700px;
 
-    box-shadow: 0 0 5px #0003;
+    box-shadow: 0 0 5px #0002;
 
     header {
       display: grid;
@@ -66,16 +66,14 @@ import "../styles/reset.css";
     }
 
     main {
-      overflow: hidden;
-      width: 100%;
+      display: grid;
+      gap: 1rem;
 
       h2 {
-        margin-top: 2rem;
-      }
+        font-size: 1.5rem;
+        line-height: 1rem;
 
-      p,
-      ul {
-        margin-bottom: 1rem;
+        margin-top: 2rem;
       }
 
       pre {
@@ -84,9 +82,17 @@ import "../styles/reset.css";
         font-size: 0.75rem;
 
         padding: 1.5rem;
-        margin-bottom: 1rem;
 
         border-radius: 5px;
+      }
+
+      p {
+      }
+
+      ul,
+      li {
+        margin-left: 1rem;
+        list-style: square;
       }
     }
 

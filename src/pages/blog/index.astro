@@ -9,7 +9,7 @@ const postList = await Astro.glob("./*md");
 <Layout>
   <section class="posts">
     {
-      postList.map(
+      postList.reverse().map(
         ({ url, frontmatter }) =>
           isPublished(frontmatter.date) && (
             <a href={url}>
@@ -21,7 +21,7 @@ const postList = await Astro.glob("./*md");
               </picture>
               <footer>
                 <h2>{frontmatter.title}</h2>
-                <p>Written on: {formatDate(frontmatter.date)}</p>
+                <p>Published on: {formatDate(frontmatter.date)}</p>
               </footer>
             </a>
           )
@@ -56,15 +56,16 @@ const postList = await Astro.glob("./*md");
 
       footer {
         h2 {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
         p {
+          font-size: 1rem;
         }
       }
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     .posts {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }

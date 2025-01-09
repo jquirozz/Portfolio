@@ -5,7 +5,7 @@ description: "A Beginner's Guide to HTML Basics"
 tags: ["HTML", "WebDevelopment", "BeginnerGuide"]
 date: 2025-01-10
 
-layout: "/src/layouts/Blog.astro"
+layout: "/src/layouts/BlogPost.astro"
 ---
 
 HTML [ HyperText Markup Language ] is the standard language for creating web pages. It’s the foundation of every website and gives structure to your content. Let’s dive into the basics of HTML and see how it works.

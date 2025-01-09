@@ -27,6 +27,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: "acorn", serif;
     padding-top: .25rem;
+    text-wrap: balance;
 }
 
 button, input {

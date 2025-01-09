@@ -5,7 +5,7 @@ description: "A Beginner's Guide to CSS Basics"
 tags: ["CSS", "WebDevelopment", "BeginnerGuide"]
 date: 2025-01-10
 
-layout: "/src/layouts/Blog.astro"
+layout: "/src/layouts/BlogPost.astro"
 ---
 
 CSS (Cascading Style Sheets) is the language used to style and layout web pages. While HTML gives structure to a webpage, CSS controls its appearance—everything from colors and fonts to positioning and responsiveness. Let’s dive into the basics of CSS and understand how it works.
@@ -62,25 +62,28 @@ This will turn all `<h1>` elements blue and set their font size to 36 pixels.
 
 CSS can be applied in three ways:
 
-1. **Inline CSS**: Directly in the HTML element using the `style` attribute.
-   ```html
-   <h1 style="color: blue; font-size: 36px;">Hello World!</h1>
-   ```
-2. **Internal CSS**: Inside a `<style>` tag within the `<head>` section of the HTML document.
+- **Inline CSS**: Directly in the HTML element using the `style` attribute.
 
-   ```html
-   <style>
-     h1 {
-       color: blue;
-       font-size: 36px;
-     }
-   </style>
-   ```
+```html
+<h1 style="color: blue; font-size: 36px;">Hello World!</h1>
+```
 
-3. **External CSS**: In a separate `.css` file, which is linked to the HTML document using the `<link>` tag.
-   ```html
-   <link rel="stylesheet" href="styles.css" />
-   ```
+- **Internal CSS**: Inside a `<style>` tag within the `<head>` section of the HTML document.
+
+```html
+<style>
+  h1 {
+    color: blue;
+    font-size: 36px;
+  }
+</style>
+```
+
+- **External CSS**: In a separate `.css` file, which is linked to the HTML document using the `<link>` tag.
+
+```html
+<link rel="stylesheet" href="styles.css" />
+```
 
 ## CSS Selectors
 
@@ -88,41 +91,42 @@ Selectors allow you to target specific elements on your webpage. Here are some c
 
 - **Element Selector**: Targets all elements of a specific type.
 
-  ```css
-  p {
-    color: green;
-  }
-  ```
+```css
+p {
+  color: green;
+}
+```
 
 - **Class Selector**: Targets all elements with a specific class.
 
-  ```css
-  .intro {
-    font-size: 18px;
-  }
-  ```
+````css
+.intro {
+  font-size: 18px;
+}
+```
 
 - **ID Selector**: Targets a specific element with a unique `id`.
 
-  ```css
+```css
   #main-header {
-    text-align: center;
-  }
-  ```
+  text-align: center;
+}
+````
 
 - **Universal Selector**: Selects all elements on the page.
-  ```css
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  ```
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
 
 ## Building Your First Stylish HTML Page
 
 Now that we understand the basics of CSS, let’s combine it with HTML to create a simple webpage.
 
-HTML:
+**HTML:**
 
 ```html
 <!DOCTYPE html>
@@ -143,7 +147,7 @@ HTML:
 </html>
 ```
 
-CSS:
+**CSS:**
 
 ```css
 body {

@@ -5,7 +5,7 @@ description: "A Beginner's Guide to JavaScript Basics"
 tags: ["JavaScript", "WebDevelopment", "BeginnerGuide"]
 date: 2025-01-17
 
-layout: "/src/layouts/Blog.astro"
+layout: "/src/layouts/BlogPost.astro"
 ---
 
 JavaScript is the programming language of the web. It allows you to create dynamic, interactive websites. While HTML and CSS provide structure and style, JavaScript enables functionality—like interactive forms, animations, and handling user input.
@@ -71,19 +71,19 @@ for (let i = 1; i <= 5; i++) {
 
 JavaScript can be written directly in your HTML file or in a separate `.js` file.
 
-1. **Inline JavaScript**: You can write JavaScript directly in the HTML file using the `<script>` tag:
+- **Inline JavaScript**: You can write JavaScript directly in the HTML file using the `<script>` tag:
 
-   ```html
-   <script>
-     alert("Hello World!");
-   </script>
-   ```
+```html
+<script>
+  alert("Hello World!");
+</script>
+```
 
-2. **External JavaScript**: It’s recommended to place JavaScript in a separate `.js` file for better organization. Link to it using the `<script>` tag:
+- **External JavaScript**: It’s recommended to place JavaScript in a separate `.js` file for better organization. Link to it using the `<script>` tag:
 
-   ```html
-   <script src="script.js"></script>
-   ```
+```html
+<script src="script.js"></script>
+```
 
 ## **Interacting with the DOM**
 

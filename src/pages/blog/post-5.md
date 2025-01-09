@@ -3,9 +3,9 @@ title: "Theme Switcher for ReactJS"
 cover: "/src/content/blog/post-5/cover.png"
 description: "Handle themes in React using the useContext API & Local Storage"
 tags: ["reactjs", "dark-theme", "web"]
-date: 2025-02-31
+date: 2025-01-31
 
-layout: "/src/layouts/Blog.astro"
+layout: "/src/layouts/BlogPost.astro"
 ---
 
 Creating a theme switcher for your ReactJS app can significantly improve the user experience, allowing users to toggle between light and dark modes. In this guide, we’ll walk through how to implement a theme switcher in React using the `useContext` API and `localStorage`.
