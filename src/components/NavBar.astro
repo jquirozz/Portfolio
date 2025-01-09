@@ -1,17 +1,21 @@
 ---
 import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
 ---
 
 <nav>
-  <h2>
-    <a href="/"> JQuirozz' </a>
-  </h2>
+  <a href="/">
+    <h2>JQuirozz'</h2>
+  </a>
   <section>
     <a href="/">Home</a>
     <a href="/blog">Blog</a>
-    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
   </section>
   <aside>
+    <a href="https://www.linkedin.com/in/joseph-arauz/">
+      <Linkedin />
+    </a>
     <a href="https://github.com/jquirozz">
       <Github />
     </a>
@@ -29,8 +33,10 @@ import Github from "../icons/Github.astro";
     color: #fff;
     background-color: #000;
 
-    h2 {
-      font-size: 1.5rem;
+    a {
+      h2 {
+        font-size: 1.5rem;
+      }
     }
     section {
       display: flex;
@@ -41,6 +47,10 @@ import Github from "../icons/Github.astro";
       }
     }
     aside {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
       svg {
       }
     }

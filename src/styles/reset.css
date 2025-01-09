@@ -14,9 +14,14 @@
     margin: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: "gt", serif;
     user-select: none;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {

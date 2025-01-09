@@ -3,17 +3,64 @@ import Layout from "./Layout.astro";
 import { formatDate } from "../utils/formatDate";
 
 const { frontmatter } = Astro.props;
-const { title, author, date } = frontmatter;
+const { cover, title, description, date } = frontmatter;
 
 import "../styles/reset.css";
 ---
 
 <Layout title={title}>
-  <header>
-    <h1>{title} by {author}</h1>
-    <h2>Written on: {formatDate(date)}</h2>
-  </header>
-  <slot />
+  <div class="post">
+    <header>
+      <img src={cover} alt={`${title} cover image`} />
+      <footer>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <section></section>
+      </footer>
+    </header>
+    <slot />
+    <footer>
+      <p>Written on: {formatDate(date)}</p>
+    </footer>
+  </div>
 </Layout>
 
-<style></style>
+<style>
+  .post {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    margin: auto;
+
+    max-width: 700px;
+
+    box-shadow: 0 0 5px #0003;
+
+    header {
+      display: grid;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+        border-radius: 10px;
+      }
+
+      footer {
+        h1 {
+        }
+        p {
+        }
+      }
+    }
+
+    /* slot */
+
+    footer {
+      p {
+      }
+    }
+  }
+</style>

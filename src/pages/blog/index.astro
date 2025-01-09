@@ -1,8 +1,55 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../utils/formatDate";
+
+const postList = await Astro.glob("./*md");
 ---
 
 <Layout>
-  <h1>BLOG</h1>
-  <a href="/blog/post-1">Post N°1</a>
+  <section class="posts">
+    {
+      postList.map(({ url, frontmatter }) => (
+        <a href={url}>
+          <img
+            src={frontmatter.cover}
+            alt={`${frontmatter.title} cover image`}
+          />
+          <footer>
+            <h2>{frontmatter.title}</h2>
+            <p>Written on: {formatDate(frontmatter.date)}</p>
+          </footer>
+        </a>
+      ))
+    }
+  </section>
 </Layout>
+
+<style>
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 2rem;
+    gap: 2rem;
+
+    a {
+      display: grid;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+        border-radius: 5px;
+      }
+
+      footer {
+        h2 {
+          font-size: 1.5rem;
+        }
+        p {
+        }
+      }
+    }
+  }
+</style>
