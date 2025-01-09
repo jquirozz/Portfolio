@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'acorn';
+    src: url('/fonts/acorn.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'gt';
+    src: url('/fonts/gt.woff') format('woff');
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "gt", serif;
+    user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "acorn", serif;
+    padding-top: .25rem;
+}
+
+button, input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

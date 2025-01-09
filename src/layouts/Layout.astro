@@ -1,0 +1,29 @@
+---
+import NavBar from "../components/NavBar.astro";
+import "../styles/reset.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || "JQuirozz'"}</title>
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  main {
+    padding: 1rem;
+  }
+</style>
