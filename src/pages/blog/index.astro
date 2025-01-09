@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../utils/formatDate";
+import { isPublished } from "../../utils/isPublished";
 
 const postList = await Astro.glob("./*md");
 ---
@@ -8,18 +9,23 @@ const postList = await Astro.glob("./*md");
 <Layout>
   <section class="posts">
     {
-      postList.map(({ url, frontmatter }) => (
-        <a href={url}>
-          <img
-            src={frontmatter.cover}
-            alt={`${frontmatter.title} cover image`}
-          />
-          <footer>
-            <h2>{frontmatter.title}</h2>
-            <p>Written on: {formatDate(frontmatter.date)}</p>
-          </footer>
-        </a>
-      ))
+      postList.map(
+        ({ url, frontmatter }) =>
+          isPublished(frontmatter.date) && (
+            <a href={url}>
+              <picture>
+                <img
+                  src={frontmatter.cover}
+                  alt={`${frontmatter.title} cover image`}
+                />
+              </picture>
+              <footer>
+                <h2>{frontmatter.title}</h2>
+                <p>Written on: {formatDate(frontmatter.date)}</p>
+              </footer>
+            </a>
+          )
+      )
     }
   </section>
 </Layout>
@@ -27,7 +33,7 @@ const postList = await Astro.glob("./*md");
 <style>
   .posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 2rem;
     gap: 2rem;
 
@@ -35,12 +41,17 @@ const postList = await Astro.glob("./*md");
       display: grid;
       gap: 1rem;
 
-      img {
-        width: 100%;
+      picture {
         aspect-ratio: 16/9;
-        object-fit: cover;
 
-        border-radius: 5px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #000;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
       footer {
@@ -50,6 +61,12 @@ const postList = await Astro.glob("./*md");
         p {
         }
       }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .posts {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
 </style>

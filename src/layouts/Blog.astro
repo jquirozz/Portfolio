@@ -11,14 +11,18 @@ import "../styles/reset.css";
 <Layout title={title}>
   <div class="post">
     <header>
-      <img src={cover} alt={`${title} cover image`} />
+      <picture>
+        <img src={cover} alt={`${title} cover image`} />
+      </picture>
       <footer>
         <h1>{title}</h1>
-        <p>{description}</p>
+        <p>{description}.</p>
         <section></section>
       </footer>
     </header>
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer>
       <p>Written on: {formatDate(date)}</p>
     </footer>
@@ -40,12 +44,17 @@ import "../styles/reset.css";
       display: grid;
       gap: 1rem;
 
-      img {
-        width: 100%;
+      picture {
+        overflow: hidden;
         aspect-ratio: 16/9;
-        object-fit: cover;
 
         border-radius: 10px;
+        background-color: #000;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
       footer {
@@ -56,7 +65,30 @@ import "../styles/reset.css";
       }
     }
 
-    /* slot */
+    main {
+      overflow: hidden;
+      width: 100%;
+
+      h2 {
+        margin-top: 2rem;
+      }
+
+      p,
+      ul {
+        margin-bottom: 1rem;
+      }
+
+      pre {
+        user-select: text;
+
+        font-size: 0.75rem;
+
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+
+        border-radius: 5px;
+      }
+    }
 
     footer {
       p {
