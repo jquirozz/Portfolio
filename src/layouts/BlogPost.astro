@@ -14,11 +14,10 @@ import "../styles/reset.css";
       <picture>
         <img src={cover} alt={`${title} cover image`} />
       </picture>
-      <footer>
+      <section>
         <h1>{title}</h1>
         <p>{description}.</p>
-        <section></section>
-      </footer>
+      </section>
     </header>
     <main>
       <slot />
@@ -57,8 +56,9 @@ import "../styles/reset.css";
         }
       }
 
-      footer {
+      section {
         h1 {
+          font-size: 1.5rem;
         }
         p {
         }
@@ -98,6 +98,7 @@ import "../styles/reset.css";
 
     footer {
       p {
+        color: #888;
       }
     }
   }

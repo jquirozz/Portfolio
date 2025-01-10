@@ -33,7 +33,7 @@ const postList = await Astro.glob("./*md");
 <style>
   .posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     padding: 2rem;
     gap: 2rem;
 
@@ -59,13 +59,14 @@ const postList = await Astro.glob("./*md");
           font-size: 1.25rem;
         }
         p {
-          font-size: 1rem;
+          font-size: 0.75rem;
+          color: #888;
         }
       }
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 500px) {
     .posts {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }

@@ -7,17 +7,12 @@ import Linkedin from "../icons/Linkedin.astro";
   <a href="/">
     <h2>JQuirozz'</h2>
   </a>
-  <section>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/projects">Projects</a>
-  </section>
   <aside>
-    <a href="https://www.linkedin.com/in/joseph-arauz/">
-      <Linkedin />
-    </a>
     <a href="https://github.com/jquirozz">
       <Github />
+    </a>
+    <a href="https://www.linkedin.com/in/joseph-arauz">
+      <Linkedin />
     </a>
   </aside>
 </nav>
@@ -36,8 +31,9 @@ import Linkedin from "../icons/Linkedin.astro";
     background-color: #000;
 
     a {
-      h2 {
-        font-size: 1.5rem;
+      svg {
+        height: 1.75rem;
+        aspect-ratio: 1;
       }
     }
     section {
