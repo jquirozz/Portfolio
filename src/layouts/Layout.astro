@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 import NavBar from "../components/NavBar.astro";
 import "../styles/reset.css";
 
@@ -10,9 +12,10 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="shortcut icon" href="/logo/transparent.png" />
     <title>{title || "JQuirozz'"}</title>
+    <ClientRouter />
   </head>
   <body>
     <NavBar />
@@ -21,9 +24,3 @@ const { title } = Astro.props;
     </main>
   </body>
 </html>
-
-<style is:global>
-  main {
-    padding: 1rem;
-  }
-</style>

@@ -1,0 +1,105 @@
+---
+import Layout from "./Layout.astro";
+import { formatDate } from "../utils/formatDate";
+
+const { frontmatter } = Astro.props;
+const { cover, title, description, date } = frontmatter;
+
+import "../styles/reset.css";
+---
+
+<Layout title={title}>
+  <div class="post">
+    <header>
+      <picture>
+        <img src={cover} alt={`${title} cover image`} />
+      </picture>
+      <section>
+        <h1>{title}</h1>
+        <p>{description}.</p>
+      </section>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Published on: {formatDate(date)}</p>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  .post {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    margin: auto;
+
+    max-width: 700px;
+
+    box-shadow: 0 0 5px #0002;
+
+    header {
+      display: grid;
+      gap: 1rem;
+
+      picture {
+        overflow: hidden;
+        aspect-ratio: 16/9;
+
+        border-radius: 10px;
+        background-color: #000;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      section {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+        }
+      }
+    }
+
+    main {
+      display: grid;
+      gap: 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1rem;
+
+        margin-top: 2rem;
+      }
+
+      pre {
+        user-select: text;
+
+        font-size: 0.75rem;
+
+        padding: 1.5rem;
+
+        border-radius: 5px;
+      }
+
+      p {
+      }
+
+      ul,
+      li {
+        margin-left: 1rem;
+        list-style: square;
+      }
+    }
+
+    footer {
+      p {
+        color: #888;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="NotFound">
+    <img src="/not-found.png" alt="Alien Abduction" />
+    <footer>
+      <h1>Not Found</h1>
+      <p>This page has been abducted by aliens</p>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  .NotFound {
+    --size: clamp(1.5rem, 10vw, 5rem);
+
+    display: grid;
+    place-content: center;
+    height: calc(100dvh - 3.75rem); /* Device height - NavBar */
+    background-color: #ffbce5;
+
+    img {
+      width: calc(var(--size) * 3);
+      height: auto;
+      margin: auto;
+      margin-bottom: 4rem;
+      filter: drop-shadow(0 5px 5px #0005);
+    }
+
+    footer {
+      text-align: center;
+
+      h1 {
+        font-size: var(--size);
+        line-height: calc(var(--size) / 2.5);
+        text-transform: capitalize;
+        color: #320047;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: calc(var(--size) / 3.75);
+        color: #222;
+      }
+    }
+  }
+</style>

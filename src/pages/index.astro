@@ -1,7 +1,195 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { ClientRouter } from "astro:transitions";
+
+import "../styles/reset.css";
+import React from "../icons/React.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import Css from "../icons/Css.astro";
+import Figma from "../icons/Figma.astro";
+import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
 ---
 
-<Layout>
-  <h1>HOME</h1>
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="shortcut icon" href="/logo/transparent.png" />
+    <title>{"JQuirozz"}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <nav>
+      <a href="/">
+        <h4>Home</h4>
+      </a>
+      <a href="#whoami">
+        <h4>Who am I</h4>
+      </a>
+      <a href="#work">
+        <h4>My work</h4>
+      </a>
+      <a href="#contact">
+        <h4>Contact</h4>
+      </a>
+      <a href="/blog">
+        <h4>Blog</h4>
+      </a>
+    </nav>
+    <main class="slides">
+      <section id="welcome">
+        <div class="techs">
+          <Figma />
+          <AstroIcon />
+          <React />
+          <Css />
+        </div>
+        <footer>
+          <p>Hi, I'm Joseph Quiroz a</p>
+          <h2>Web Dev <span>&</span> Designer</h2>
+        </footer>
+      </section>
+      <section id="whoami">Whoami</section>
+      <section id="work">Work</section>
+      <section id="contact">Contact</section>
+    </main>
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    --color: #8953b5;
+
+    position: relative;
+
+    nav {
+      z-index: 500;
+
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: center;
+
+      gap: 1rem;
+
+      width: 20rem;
+      height: 100%;
+
+      a {
+        position: relative;
+
+        padding-right: 5rem;
+
+        transition: color 200ms ease-in-out;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        :hover {
+          color: var(--color);
+        }
+
+        ::after {
+          --line-size: 0.1rem;
+
+          content: "";
+
+          position: absolute;
+          top: calc(50% - var(--line-size) / 2);
+          right: -0.75rem;
+
+          width: 4rem;
+          height: var(--line-size);
+
+          border-radius: 10px;
+
+          background-color: var(--color);
+        }
+      }
+    }
+
+    .slides {
+      position: relative;
+
+      section {
+        /* position: sticky; */
+        top: 0;
+
+        padding-right: 20rem;
+
+        width: 100%;
+        aspect-ratio: 2/3;
+        max-height: 100svh;
+
+        background-color: #fff;
+      }
+    }
+
+    #welcome {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background-color: #fff59e;
+
+      .techs {
+        padding: 6rem;
+        svg {
+          width: 4rem;
+          aspect-ratio: 1;
+        }
+      }
+
+      .circle :nth-child(1) {
+        animation-delay: 0;
+      }
+      .circle :nth-child(2) {
+        animation-delay: 1s;
+      }
+      .circle :nth-child(3) {
+        animation-delay: 2s;
+      }
+      .circle :nth-child(4) {
+        animation-delay: 3s;
+      }
+
+      footer {
+        padding-bottom: 5rem;
+        padding-left: 6rem;
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 5rem;
+
+          span {
+            font-size: 2rem;
+            color: var(--color);
+          }
+        }
+      }
+    }
+    #whoami {
+      background-color: #8953b5;
+    }
+    #work {
+      background-color: #fff59e;
+    }
+    #contact {
+      background-color: #8953b5;
+    }
+  }
+</style>

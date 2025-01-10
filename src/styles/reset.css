@@ -12,16 +12,20 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    cursor: url("/src/cursors/default.svg"), default;
 }
 
 body {
     font-family: "gt", serif;
     user-select: none;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "acorn", serif;
     padding-top: .25rem;
+    text-wrap: balance;
 }
 
 button, input {
@@ -32,6 +36,7 @@ button, input {
 
 button {
     cursor: pointer;
+
 }
 
 a {

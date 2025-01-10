@@ -1,8 +1,74 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { formatDate } from "../../utils/formatDate";
+import { isPublished } from "../../utils/isPublished";
+
+const postList = await Astro.glob("./*md");
 ---
 
 <Layout>
-  <h1>BLOG</h1>
-  <a href="/blog/post-1">Post N°1</a>
+  <section class="posts">
+    {
+      postList.reverse().map(
+        ({ url, frontmatter }) =>
+          isPublished(frontmatter.date) && (
+            <a href={url}>
+              <picture>
+                <img
+                  src={frontmatter.cover}
+                  alt={`${frontmatter.title} cover image`}
+                />
+              </picture>
+              <footer>
+                <h2>{frontmatter.title}</h2>
+                <p>Published on: {formatDate(frontmatter.date)}</p>
+              </footer>
+            </a>
+          )
+      )
+    }
+  </section>
 </Layout>
+
+<style>
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    padding: 2rem;
+    gap: 2rem;
+
+    a {
+      display: grid;
+      gap: 1rem;
+
+      picture {
+        aspect-ratio: 16/9;
+
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #000;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      footer {
+        h2 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.75rem;
+          color: #888;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .posts {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+</style>

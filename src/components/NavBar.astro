@@ -1,19 +1,18 @@
 ---
 import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
 ---
 
 <nav>
-  <h2>
-    <a href="/"> JQuirozz' </a>
-  </h2>
-  <section>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/about">About</a>
-  </section>
+  <a href="/">
+    <h2>JQuirozz'</h2>
+  </a>
   <aside>
     <a href="https://github.com/jquirozz">
       <Github />
+    </a>
+    <a href="https://www.linkedin.com/in/joseph-arauz">
+      <Linkedin />
     </a>
   </aside>
 </nav>
@@ -26,11 +25,16 @@ import Github from "../icons/Github.astro";
 
     padding: 0.25rem 1.5rem;
 
+    height: 3.75rem;
+
     color: #fff;
     background-color: #000;
 
-    h2 {
-      font-size: 1.5rem;
+    a {
+      svg {
+        height: 1.75rem;
+        aspect-ratio: 1;
+      }
     }
     section {
       display: flex;
@@ -41,6 +45,10 @@ import Github from "../icons/Github.astro";
       }
     }
     aside {
+      display: flex;
+      gap: 0.75rem;
+      padding-top: 0.25rem; /* Center svg vertically */
+
       svg {
       }
     }
