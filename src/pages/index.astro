@@ -2,12 +2,16 @@
 import { ClientRouter } from "astro:transitions";
 
 import "../styles/reset.css";
-import React from "../icons/React.astro";
-import AstroIcon from "../icons/AstroIcon.astro";
-import Css from "../icons/Css.astro";
-import Figma from "../icons/Figma.astro";
+import Person from "../icons/Person.astro";
 import Github from "../icons/Github.astro";
 import Linkedin from "../icons/Linkedin.astro";
+
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import Figma from "../icons/Figma.astro";
 ---
 
 <!doctype html>
@@ -22,7 +26,7 @@ import Linkedin from "../icons/Linkedin.astro";
   </head>
   <body>
     <nav>
-      <a href="/">
+      <a href="#welcome">
         <h4>Home</h4>
       </a>
       <a href="#whoami">
@@ -39,34 +43,51 @@ import Linkedin from "../icons/Linkedin.astro";
       </a>
     </nav>
     <main class="slides">
-      <section id="welcome">
-        <div class="techs">
-          <Figma />
-          <AstroIcon />
-          <React />
-          <Css />
-        </div>
+      <section class="slide" id="welcome">
+        <header>
+          <section class="social">
+            <picture>
+              <img src="/logo/main.jpg" alt="JQuirozz logo" />
+            </picture>
+            <div>
+              <a href="/">
+                <Person />
+                <p>Hire me!</p>
+              </a>
+              <a
+                href="https://github.com/jquirozz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github />
+                <p>Github</p>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/joseph-arauz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin />
+                <p>Linkedin</p>
+              </a>
+            </div>
+          </section>
+        </header>
         <footer>
           <p>Hi, I'm Joseph Quiroz a</p>
           <h2>Web Dev <span>&</span> Designer</h2>
         </footer>
       </section>
-      <section id="whoami">Whoami</section>
-      <section id="work">Work</section>
-      <section id="contact">Contact</section>
+      <section class="slide" id="whoami">Whoami</section>
+      <section class="slide" id="work">Work</section>
+      <section class="slide" id="contact">Contact</section>
     </main>
   </body>
 </html>
 
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    --color: #8953b5;
-
-    position: relative;
+    --border-padding: 5rem;
 
     nav {
       z-index: 500;
@@ -90,14 +111,11 @@ import Linkedin from "../icons/Linkedin.astro";
 
         padding-right: 5rem;
 
-        transition: color 200ms ease-in-out;
+        transform: translateX(100%);
+        animation: slide-in-rtl 250ms ease-in-out forwards;
 
         h4 {
           font-size: 2rem;
-        }
-
-        :hover {
-          color: var(--color);
         }
 
         ::after {
@@ -113,21 +131,34 @@ import Linkedin from "../icons/Linkedin.astro";
           height: var(--line-size);
 
           border-radius: 10px;
-
           background-color: var(--color);
         }
+      }
+      a:hover {
+        color: var(--color);
+      }
+      a:nth-child(1) {
+        animation-delay: 0ms;
+      }
+      a:nth-child(2) {
+        animation-delay: 100ms;
+      }
+      a:nth-child(3) {
+        animation-delay: 200ms;
+      }
+      a:nth-child(4) {
+        animation-delay: 300ms;
+      }
+      a:nth-child(5) {
+        animation-delay: 400ms;
       }
     }
 
     .slides {
       position: relative;
+      padding-right: 20rem;
 
-      section {
-        /* position: sticky; */
-        top: 0;
-
-        padding-right: 20rem;
-
+      .slide {
         width: 100%;
         aspect-ratio: 2/3;
         max-height: 100svh;
@@ -141,39 +172,103 @@ import Linkedin from "../icons/Linkedin.astro";
       flex-direction: column;
       justify-content: space-between;
 
-      background-color: #fff59e;
+      gap: var(--border-padding);
+      padding-left: var(--border-padding);
+      padding-bottom: calc(var(--border-padding) * 0.75);
 
-      .techs {
-        padding: 6rem;
-        svg {
-          width: 4rem;
-          aspect-ratio: 1;
+      overflow: hidden;
+
+      header {
+        --spacing: 1rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        gap: var(--border-padding);
+
+        .social {
+          display: flex;
+          align-items: center;
+
+          padding-top: var(--border-padding);
+
+          filter: opacity(0);
+          animation: fade-in 300ms ease-in-out forwards;
+
+          picture {
+            z-index: 1;
+
+            overflow: hidden;
+            outline: var(--spacing) solid #fff;
+            border-radius: 50%;
+
+            background-color: #000;
+
+            img {
+              width: 14rem;
+              aspect-ratio: 1;
+            }
+          }
+
+          div {
+            display: grid;
+            gap: var(--spacing);
+
+            a {
+              position: relative;
+
+              display: flex;
+              flex-direction: row-reverse;
+              align-items: center;
+
+              gap: 0.5rem;
+              padding: 0.75rem 1.25rem;
+              padding-left: calc(var(--spacing) + 1.25rem * 2);
+
+              border-radius: 5px;
+
+              color: #fff;
+              background-color: #000;
+
+              transition:
+                transform 200ms ease-in-out,
+                background-color 100ms ease-in-out;
+
+              svg {
+                width: 1.5rem;
+              }
+              p {
+                font-size: 0.75rem;
+              }
+            }
+
+            a:hover {
+              transform: translateX(10px);
+              background-color: var(--color);
+            }
+
+            a:nth-child(2) {
+              left: calc(var(--spacing) * -1);
+            }
+            a:nth-child(1),
+            a:nth-child(3) {
+              left: calc(var(--spacing) * -2);
+              width: calc(100% + var(--spacing));
+            }
+          }
         }
-      }
-
-      .circle :nth-child(1) {
-        animation-delay: 0;
-      }
-      .circle :nth-child(2) {
-        animation-delay: 1s;
-      }
-      .circle :nth-child(3) {
-        animation-delay: 2s;
-      }
-      .circle :nth-child(4) {
-        animation-delay: 3s;
       }
 
       footer {
-        padding-bottom: 5rem;
-        padding-left: 6rem;
+        transform: translateX(-100%);
+        animation: slide-in-ltr 300ms ease-in-out forwards;
 
         p {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
         }
 
         h2 {
-          font-size: 5rem;
+          font-size: 6rem;
 
           span {
             font-size: 2rem;
@@ -183,13 +278,44 @@ import Linkedin from "../icons/Linkedin.astro";
       }
     }
     #whoami {
-      background-color: #8953b5;
+      background-color: #eee;
     }
     #work {
-      background-color: #fff59e;
+      background-color: #fff;
     }
     #contact {
-      background-color: #8953b5;
+      background-color: #eee;
+    }
+  }
+
+  @keyframes slide-in-ltr {
+    from {
+      filter: opacity(0);
+      transform: translateX(-100%);
+    }
+    to {
+      filter: opacity(1);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-rtl {
+    from {
+      filter: opacity(0);
+      transform: translateX(100%);
+    }
+    to {
+      filter: opacity(1);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      filter: opacity(0);
+    }
+    to {
+      filter: opacity(1);
     }
   }
 </style>

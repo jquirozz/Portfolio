@@ -16,6 +16,14 @@
     cursor: url("/src/cursors/default.svg"), default;
 }
 
+:root {
+    --color: #c00;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "gt", serif;
     user-select: none;
